@@ -39,7 +39,7 @@ export class Peloton {
       headers: {
         'Content-Type': 'application/json',
         'User-Agent': 'node-peloton',
-        'Cookie': this.session,
+        'Cookie': this.session ? `peloton_session_id=${this.session}` : undefined,
       },
     });
 
