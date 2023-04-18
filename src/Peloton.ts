@@ -41,7 +41,7 @@ export class Peloton {
       throw new Error('Unable to fetch workouts before logging in');
     }
 
-    const response = await this._request<PelotonMeResponse>('api/me', HttpVerb.Get);
+    const response = await this._request<PelotonMeResponse>('api/me');
 
     // stash this while we have it
     this.userId = response.id;
@@ -59,7 +59,7 @@ export class Peloton {
       await this.getMe();
     }
 
-    return this._request(`api/user/${this.userId}/workouts?sort_by=-created&page=${page}&limit=${count}`, HttpVerb.Get);
+    return this._request(`api/user/${this.userId}/workouts?sort_by=-created&page=${page}&limit=${count}`);
   }
 
   async getWorkoutById(workoutId: string) {
@@ -67,7 +67,15 @@ export class Peloton {
       throw new Error('Unable to fetch workouts before logging in');
     }
 
-    return this._request(`api/workout/${workoutId}`, HttpVerb.Get);
+    return this._request(`api/workout/${workoutId}`);
+  }
+
+  async getWorkoutMetricsById(workoutId: string) {
+    if (!this.sessionId) {
+      throw new Error('Unable to fetch workouts before logging in');
+    }
+
+    return this._request(`api/workout/${workoutId}/performance_graph?every_n=50`);
   }
 
   private async _request<T>(path: string, method: HttpVerb = HttpVerb.Get, data?: Record<string, string>) {
