@@ -1,1 +1,1 @@
-console.log('Hello, world');
+export { Peloton } from './Peloton';
