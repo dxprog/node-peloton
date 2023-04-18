@@ -1,0 +1,27 @@
+{
+  "name": "node-peloton",
+  "version": "0.0.1",
+  "description": "A node.js library for accessing Peloton APIs",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dxprog/node-peloton.git"
+  },
+  "keywords": [
+    "peloton"
+  ],
+  "author": "Matt Hackmann <matt@dxprog.com>",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/dxprog/node-peloton/issues"
+  },
+  "homepage": "https://github.com/dxprog/node-peloton#readme",
+  "devDependencies": {
+    "node-fetch": "^3.3.1",
+    "typescript": "^5.0.4"
+  }
+}

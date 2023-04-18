@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "lib": [ "es2020", "dom" ],
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "es2020",
+    "target": "es2020",
+    "jsx": "react",
+    "allowJs": true,
+    "baseUrl": ".",
+  },
+  "files": [
+    "./src/index.ts"
+  ]
+}
