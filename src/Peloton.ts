@@ -32,7 +32,15 @@ export class Peloton {
     this.userId = response.user_id;
   }
 
-  async _request<T>(path: string, method: HttpVerb = HttpVerb.Get, data?: Record<string, string>) {
+  async workouts(count: number = 0, page: number = 0) {
+    if (!this.session) {
+      throw new Error('Unable to fetch workouts before logging in');
+    }
+
+    return this._request(`api/user/${this.userId}/workouts?sort_by=-created&page=${page}&limit=${count}`, HttpVerb.Get);
+  }
+
+  private async _request<T>(path: string, method: HttpVerb = HttpVerb.Get, data?: Record<string, string>) {
     const response = await fetch(`${BASE_URL}/${path}`, {
       method,
       body: data ? JSON.stringify(data) : undefined,
