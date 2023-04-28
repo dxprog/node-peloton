@@ -2,12 +2,13 @@
   "name": "node-peloton",
   "version": "0.0.1",
   "description": "A node.js library for accessing Peloton APIs",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "test": "ts-node-esm index.ts",
+    "test": "echo 'No tests'",
     "start": "tsc --watch",
-    "build": "tsc"
+    "build": "tsc",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
