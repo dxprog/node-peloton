@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "A node.js library for accessing Peloton APIs",
   "main": "dist/index.js",
-  "type": "module",
   "scripts": {
     "test": "echo 'No tests'",
     "start": "tsc --watch",
